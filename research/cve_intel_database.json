@@ -1,0 +1,93 @@
+[
+  {
+    "cve": "CVE-2025-55182",
+    "aliases": ["CVE-2025-66478", "React2Shell"],
+    "package": "react",
+    "ecosystem": "npm",
+    "severity": "CRITICAL",
+    "cvss": 10.0,
+    "vulnerability_class": "Remote Code Execution (RCE)",
+    "description": "Unauthenticated RCE in React Server Components Flight protocol deserializer via crafted HTTP request.",
+    "affected_versions": "< 19.2.1",
+    "fixed_in": "19.2.1",
+    "mitigation": "Upgrade React to >= 19.2.1 and Next.js to >= 15.1.9 or >= 16.0.7."
+  },
+  {
+    "cve": "CVE-2026-64641",
+    "aliases": [],
+    "package": "next",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": 7.5,
+    "vulnerability_class": "Denial of Service (DoS)",
+    "description": "Excessive CPU usage and event loop blocking in App Router Server Actions.",
+    "affected_versions": "< 15.2.0",
+    "fixed_in": "15.2.0",
+    "mitigation": "Enforce per-route rate limiting and request timeouts on all Server Actions."
+  },
+  {
+    "cve": "CVE-2026-64642",
+    "aliases": [],
+    "package": "next",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": 7.5,
+    "vulnerability_class": "Authentication Bypass",
+    "description": "Middleware and routing proxy bypass in Turbopack development and edge runtimes.",
+    "affected_versions": "< 15.2.0",
+    "fixed_in": "15.2.0",
+    "mitigation": "Upgrade Next.js and avoid relying solely on middleware for route-level authorization."
+  },
+  {
+    "cve": "CVE-2025-64459",
+    "aliases": [],
+    "package": "django",
+    "ecosystem": "PyPI",
+    "severity": "CRITICAL",
+    "cvss": 9.1,
+    "vulnerability_class": "SQL Injection / ORM Manipulation",
+    "description": "Unvalidated parameters in filter/exclude/get queries allowing _connector and _negated injection.",
+    "affected_versions": "< 4.2.26, < 5.1.14, < 5.2.8",
+    "fixed_in": "5.2.8",
+    "mitigation": "Upgrade Django to 5.2.8 / 5.1.14 / 4.2.26. Do not unpack user-controlled dicts into ORM calls."
+  },
+  {
+    "cve": "CVE-2025-55130",
+    "aliases": [],
+    "package": "nodejs",
+    "ecosystem": "Node.js",
+    "severity": "HIGH",
+    "cvss": 8.2,
+    "vulnerability_class": "Security Policy Bypass",
+    "description": "Permission model file system access bypass using crafted relative symlink paths.",
+    "affected_versions": "20.x, 22.x, 24.x pre-patch",
+    "fixed_in": "20.19.0, 22.14.0, 24.5.0",
+    "mitigation": "Update Node.js binary to latest active LTS patch release."
+  },
+  {
+    "cve": "CVE-2026-27205",
+    "aliases": [],
+    "package": "flask",
+    "ecosystem": "PyPI",
+    "severity": "MEDIUM",
+    "cvss": 6.5,
+    "vulnerability_class": "Cache Poisoning / Session Leak",
+    "description": "Omission of Vary: Cookie header on certain session key checks causing shared cache poisoning.",
+    "affected_versions": "< 3.1.3",
+    "fixed_in": "3.1.3",
+    "mitigation": "Upgrade Flask to >= 3.1.3."
+  },
+  {
+    "cve": "CVE-2026-41205",
+    "aliases": [],
+    "package": "mako",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": 7.5,
+    "vulnerability_class": "Path Traversal",
+    "description": "Path traversal in TemplateLookup.get_template() allowing arbitrary file reads outside templates dir.",
+    "affected_versions": "< 1.3.10",
+    "fixed_in": "1.3.10",
+    "mitigation": "Upgrade Mako to >= 1.3.10; sanitize template identifier strings."
+  }
+]

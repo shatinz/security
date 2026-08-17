@@ -1,0 +1,18 @@
+# Security Sentinel Configuration for Security Research Program
+gate_mode: "warn"
+scan_profile: "standard"
+scan_scope: "differential"
+auto_fix: false
+severity_threshold: "low"
+
+exclude_paths:
+  - "node_modules/**"
+  - "vendor/**"
+  - ".git/**"
+  - "dist/**"
+  - "build/**"
+  - ".venv/**"
+  - "venv/**"
+
+exclude_rules: []
+custom_rules_path: ""
