@@ -51,6 +51,28 @@ class TestResearchEngine(unittest.TestCase):
         self.assertIn("CVE-2025-55182", brief)
         self.assertIn("React2Shell", brief)
 
+    def test_sync_cve_database(self):
+        engine = ResearchEngine(output_dir=self.test_dir)
+        mock_results = {
+            "timestamp": "2026-09-21T09:00:00",
+            "packages_scanned": 1,
+            "findings_by_package": {"npm:react": 1},
+            "critical_cves": [
+                {
+                    "id": "GHSA-1234",
+                    "cve": "CVE-2025-55182",
+                    "package": "react",
+                    "ecosystem": "npm",
+                    "summary": "React2Shell RCE",
+                    "details_url": "https://osv.dev/vulnerability/GHSA-1234"
+                }
+            ]
+        }
+        total = engine.sync_cve_database(mock_results)
+        self.assertEqual(total, 1)
+        db_path = os.path.join(self.test_dir, "cve_intel_database.json")
+        self.assertTrue(os.path.exists(db_path))
+
 
 if __name__ == "__main__":
     unittest.main()

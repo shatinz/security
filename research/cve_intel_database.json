@@ -1,7 +1,10 @@
 [
   {
     "cve": "CVE-2025-55182",
-    "aliases": ["CVE-2025-66478", "React2Shell"],
+    "aliases": [
+      "CVE-2025-66478",
+      "React2Shell"
+    ],
     "package": "react",
     "ecosystem": "npm",
     "severity": "CRITICAL",
@@ -89,5 +92,529 @@
     "affected_versions": "< 1.3.10",
     "fixed_in": "1.3.10",
     "mitigation": "Upgrade Mako to >= 1.3.10; sanitize template identifier strings."
+  },
+  {
+    "cve": "CVE-2025-30218",
+    "aliases": [
+      "GHSA-223j-4rm8-mrmf"
+    ],
+    "package": "next",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Next.js may leak x-middleware-subrequest-id to external hosts",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade next to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-223j-4rm8-mrmf"
+  },
+  {
+    "cve": "CVE-2021-43803",
+    "aliases": [
+      "GHSA-25mp-g6fv-mqxx"
+    ],
+    "package": "next",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Unexpected server crash in Next.js.",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade next to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-25mp-g6fv-mqxx"
+  },
+  {
+    "cve": "CVE-2026-44575",
+    "aliases": [
+      "GHSA-267c-6grr-h53f"
+    ],
+    "package": "next",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Next.js has a Middleware / Proxy bypass in App Router applications via segment-prefetch routes",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade next to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-267c-6grr-h53f"
+  },
+  {
+    "cve": "CVE-2026-45109",
+    "aliases": [
+      "GHSA-26hh-7cqf-hhc6"
+    ],
+    "package": "next",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Next.js has a Middleware / Proxy bypass in App Router applications via segment-prefetch routes - Incomplete Fix Follow-Up",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade next to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-26hh-7cqf-hhc6"
+  },
+  {
+    "cve": "GHSA-2xp9-vwfh-vxw4",
+    "aliases": [],
+    "package": "next",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Next.js: Unauthenticated Remote Code Execution in Image Optimization API when AVIF files are used",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade next to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-2xp9-vwfh-vxw4"
+  },
+  {
+    "cve": "CVE-2013-7035",
+    "aliases": [
+      "GHSA-g53w-52xc-2j85"
+    ],
+    "package": "react",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Cross-Site Scripting in react",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade react to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-g53w-52xc-2j85"
+  },
+  {
+    "cve": "GHSA-hg79-j56m-fxgv",
+    "aliases": [],
+    "package": "react",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Cross-Site Scripting in react",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade react to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-hg79-j56m-fxgv"
+  },
+  {
+    "cve": "CVE-2024-10491",
+    "aliases": [
+      "GHSA-cm5g-3pgc-8rg4"
+    ],
+    "package": "express",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Express ressource injection",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade express to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-cm5g-3pgc-8rg4"
+  },
+  {
+    "cve": "CVE-2014-6393",
+    "aliases": [
+      "GHSA-gpvr-g6gh-9mc2"
+    ],
+    "package": "express",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "No Charset in Content-Type Header in express",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade express to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-gpvr-g6gh-9mc2"
+  },
+  {
+    "cve": "CVE-2024-9266",
+    "aliases": [
+      "GHSA-jj78-5fmv-mv28"
+    ],
+    "package": "express",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Express Open Redirect vulnerability",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade express to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-jj78-5fmv-mv28"
+  },
+  {
+    "cve": "CVE-2024-43796",
+    "aliases": [
+      "GHSA-qw6h-vgh9-j6wx"
+    ],
+    "package": "express",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "express vulnerable to XSS via response.redirect()",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade express to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-qw6h-vgh9-j6wx"
+  },
+  {
+    "cve": "CVE-2024-29041",
+    "aliases": [
+      "GHSA-rv95-896h-c2vc"
+    ],
+    "package": "express",
+    "ecosystem": "npm",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Express.js Open Redirect in malformed URLs",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade express to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-rv95-896h-c2vc"
+  },
+  {
+    "cve": "CVE-2021-32677",
+    "aliases": [
+      "GHSA-8h2j-cgx8-6xv7"
+    ],
+    "package": "fastapi",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Cross-Site Request Forgery (CSRF) in FastAPI",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade fastapi to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-8h2j-cgx8-6xv7"
+  },
+  {
+    "cve": "CVE-2024-24762",
+    "aliases": [
+      "PYSEC-2024-38"
+    ],
+    "package": "fastapi",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "FastAPI is a web framework for building APIs with Python 3.8+ based on standard Python type hints. When using form data,",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade fastapi to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/PYSEC-2024-38"
+  },
+  {
+    "cve": "CVE-2012-4520",
+    "aliases": [
+      "GHSA-2655-q453-22f9"
+    ],
+    "package": "django",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Django Allows Arbitrary URL Generation",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade django to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-2655-q453-22f9"
+  },
+  {
+    "cve": "CVE-2014-0481",
+    "aliases": [
+      "GHSA-296w-6qhq-gf92"
+    ],
+    "package": "django",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Django denial of service via file upload naming",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade django to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-296w-6qhq-gf92"
+  },
+  {
+    "cve": "CVE-2018-7537",
+    "aliases": [
+      "GHSA-2f9x-5v75-3qv4"
+    ],
+    "package": "django",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Django Denial-of-service possibility in truncatechars_html and truncatewords_html template filters",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade django to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-2f9x-5v75-3qv4"
+  },
+  {
+    "cve": "CVE-2022-28346",
+    "aliases": [
+      "GHSA-2gwj-7jmv-h26r"
+    ],
+    "package": "django",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "SQL Injection in Django",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade django to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-2gwj-7jmv-h26r"
+  },
+  {
+    "cve": "CVE-2023-24580",
+    "aliases": [
+      "GHSA-2hrw-hx67-34x6"
+    ],
+    "package": "django",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Resource exhaustion in Django",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade django to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-2hrw-hx67-34x6"
+  },
+  {
+    "cve": "CVE-2025-47278",
+    "aliases": [
+      "GHSA-4grg-w6v8-c28g"
+    ],
+    "package": "flask",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Flask uses fallback key instead of current signing key",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade flask to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-4grg-w6v8-c28g"
+  },
+  {
+    "cve": "CVE-2018-1000656",
+    "aliases": [
+      "GHSA-562c-5r94-xh97"
+    ],
+    "package": "flask",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Flask is vulnerable to Denial of Service via incorrect encoding of JSON data",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade flask to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-562c-5r94-xh97"
+  },
+  {
+    "cve": "CVE-2019-1010083",
+    "aliases": [
+      "GHSA-5wv5-4vpf-pj6m"
+    ],
+    "package": "flask",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Pallets Project Flask is vulnerable to Denial of Service via Unexpected memory usage",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade flask to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-5wv5-4vpf-pj6m"
+  },
+  {
+    "cve": "CVE-2023-30861",
+    "aliases": [
+      "GHSA-m2qf-hxjv-5gpq"
+    ],
+    "package": "flask",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade flask to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-m2qf-hxjv-5gpq"
+  },
+  {
+    "cve": "CVE-2019-7548",
+    "aliases": [
+      "GHSA-38fc-9xqv-7f7q"
+    ],
+    "package": "sqlalchemy",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "SQLAlchemy is vulnerable to SQL Injection via group_by parameter",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade sqlalchemy to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-38fc-9xqv-7f7q"
+  },
+  {
+    "cve": "CVE-2019-7164",
+    "aliases": [
+      "GHSA-887w-45rq-vxgf"
+    ],
+    "package": "sqlalchemy",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "SQLAlchemy vulnerable to SQL Injection via order_by parameter",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade sqlalchemy to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-887w-45rq-vxgf"
+  },
+  {
+    "cve": "CVE-2012-0805",
+    "aliases": [
+      "GHSA-hfg2-wf6j-x53p"
+    ],
+    "package": "sqlalchemy",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "SQLAlchemy vulnerable to SQL injection",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade sqlalchemy to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-hfg2-wf6j-x53p"
+  },
+  {
+    "cve": "CVE-2021-29510",
+    "aliases": [
+      "GHSA-5jqp-qgf6-3pvh"
+    ],
+    "package": "pydantic",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Use of \"infinity\" as an input to datetime and date fields causes infinite loop in pydantic",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade pydantic to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-5jqp-qgf6-3pvh"
+  },
+  {
+    "cve": "CVE-2024-3772",
+    "aliases": [
+      "GHSA-mr82-8j83-vxmv"
+    ],
+    "package": "pydantic",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Pydantic regular expression denial of service",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade pydantic to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-mr82-8j83-vxmv"
+  },
+  {
+    "cve": "CVE-2023-36258",
+    "aliases": [
+      "GHSA-2qmj-7962-cjq8"
+    ],
+    "package": "langchain",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "langchain arbitrary code execution vulnerability",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade langchain to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-2qmj-7962-cjq8"
+  },
+  {
+    "cve": "CVE-2026-45134",
+    "aliases": [
+      "GHSA-3644-q5cj-c5c7"
+    ],
+    "package": "langchain",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "LangSmith SDK: Public prompt pull deserializes untrusted manifests without trust boundary warning",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade langchain to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-3644-q5cj-c5c7"
+  },
+  {
+    "cve": "CVE-2024-2965",
+    "aliases": [
+      "GHSA-3hjh-jh2h-vrg6"
+    ],
+    "package": "langchain",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Denial of service in langchain-community",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade langchain to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-3hjh-jh2h-vrg6"
+  },
+  {
+    "cve": "CVE-2024-8309",
+    "aliases": [
+      "GHSA-45pg-36p6-83v9"
+    ],
+    "package": "langchain",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "Langchain SQL Injection vulnerability",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade langchain to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-45pg-36p6-83v9"
+  },
+  {
+    "cve": "CVE-2023-36188",
+    "aliases": [
+      "GHSA-57fc-8q82-gfp3"
+    ],
+    "package": "langchain",
+    "ecosystem": "PyPI",
+    "severity": "HIGH",
+    "cvss": null,
+    "vulnerability_class": "Advisory / Vulnerability",
+    "description": "langchain vulnerable to arbitrary code execution",
+    "affected_versions": "See advisory",
+    "fixed_in": "Latest patch release",
+    "mitigation": "Upgrade langchain to the latest patched version.",
+    "details_url": "https://osv.dev/vulnerability/GHSA-57fc-8q82-gfp3"
   }
 ]

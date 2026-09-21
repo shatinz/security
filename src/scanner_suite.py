@@ -64,7 +64,7 @@ class ScannerSuite:
                         })
                     try:
                         os.remove(report_file)
-                    except Exception:
+                    except OSError:
                         pass
             except Exception as e:
                 print(f"[!] Gitleaks scan error: {e}")
@@ -120,19 +120,118 @@ class ScannerSuite:
                     })
                 try:
                     os.remove(report_file)
-                except Exception:
+                except OSError:
                     pass
         except Exception as e:
             print(f"[!] Semgrep scan error: {e}")
 
         return findings
 
+    def scan_sast_bandit(self) -> List[Dict[str, Any]]:
+        """Executes Bandit AST security analysis for Python code."""
+        findings = []
+        if not self.tools_status.get("bandit", {}).get("available"):
+            return findings
+
+        tests_path = os.path.join(self.target_dir, "tests")
+        cmd = [
+            "bandit", "-r", self.target_dir,
+            "-f", "json",
+            "-q",
+            "-x", tests_path
+        ]
+        try:
+            proc = subprocess.run(cmd, capture_output=True, text=True, cwd=self.target_dir)
+            if proc.stdout:
+                try:
+                    data = json.loads(proc.stdout)
+                    for res in data.get("results", []):
+                        sev_raw = res.get("issue_severity", "LOW").lower()
+                        mapped_sev = "critical" if sev_raw == "high" else ("high" if sev_raw == "medium" else "low")
+                        cwe_link = res.get("issue_cwe", {}).get("link", "")
+                        cwe_list = [cwe_link] if cwe_link else []
+                        findings.append({
+                            "id": res.get("test_id", "BANDIT-RULE"),
+                            "layer": "sast",
+                            "severity": mapped_sev,
+                            "title": res.get("issue_text", "Python AST Security Finding"),
+                            "file": res.get("filename", ""),
+                            "line": res.get("line_number", 0),
+                            "cwe": cwe_list,
+                            "tool": "Bandit"
+                        })
+                except json.JSONDecodeError:
+                    pass
+        except Exception as e:
+            print(f"[!] Bandit scan error: {e}")
+
+        return findings
+
+    def scan_dependencies(self) -> List[Dict[str, Any]]:
+        """Audits project dependencies using pip-audit or npm."""
+        findings = []
+        req_file = os.path.join(self.target_dir, "requirements.txt")
+        if os.path.exists(req_file) and self.tools_status.get("pip-audit", {}).get("available"):
+            cmd = ["pip-audit", "-r", req_file, "-f", "json"]
+            try:
+                proc = subprocess.run(cmd, capture_output=True, text=True, cwd=self.target_dir)
+                if proc.stdout:
+                    try:
+                        data = json.loads(proc.stdout)
+                        deps = data.get("dependencies", []) if isinstance(data, dict) else []
+                        for dep in deps:
+                            for vuln in dep.get("vulns", []):
+                                findings.append({
+                                    "id": vuln.get("id", "DEP-VULN"),
+                                    "layer": "dependency",
+                                    "severity": "high",
+                                    "title": f"Vulnerable dependency: {dep.get('name')} ({vuln.get('id')})",
+                                    "file": "requirements.txt",
+                                    "line": 1,
+                                    "cwe": vuln.get("aliases", []),
+                                    "tool": "pip-audit"
+                                })
+                    except json.JSONDecodeError:
+                        pass
+            except Exception as e:
+                print(f"[!] pip-audit scan error: {e}")
+
+        pkg_json = os.path.join(self.target_dir, "package.json")
+        if os.path.exists(pkg_json) and self.tools_status.get("npm", {}).get("available"):
+            cmd = ["npm", "audit", "--json"]
+            try:
+                proc = subprocess.run(cmd, capture_output=True, text=True, cwd=self.target_dir)
+                if proc.stdout:
+                    try:
+                        data = json.loads(proc.stdout)
+                        vulnerabilities = data.get("vulnerabilities", {})
+                        for pkg_name, info in vulnerabilities.items():
+                            sev_raw = info.get("severity", "moderate").lower()
+                            mapped_sev = "critical" if sev_raw == "critical" else ("high" if sev_raw == "high" else "medium")
+                            findings.append({
+                                "id": f"NPM-{pkg_name.upper()}",
+                                "layer": "dependency",
+                                "severity": mapped_sev,
+                                "title": f"Vulnerable npm package: {pkg_name}",
+                                "file": "package.json",
+                                "line": 1,
+                                "tool": "npm-audit"
+                            })
+                    except json.JSONDecodeError:
+                        pass
+            except Exception as e:
+                print(f"[!] npm audit scan error: {e}")
+
+        return findings
+
     def run_full_audit(self) -> Dict[str, Any]:
         """Runs all enabled scanning layers and aggregates results."""
         secrets = self.scan_secrets()
-        sast = self.scan_sast_semgrep()
+        sast_semgrep = self.scan_sast_semgrep()
+        sast_bandit = self.scan_sast_bandit()
+        deps = self.scan_dependencies()
 
-        all_findings = secrets + sast
+        all_findings = secrets + sast_semgrep + sast_bandit + deps
         severities = {"critical": 0, "high": 0, "medium": 0, "low": 0, "info": 0}
 
         for f in all_findings:

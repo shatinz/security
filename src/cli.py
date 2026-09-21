@@ -7,11 +7,13 @@ import os
 import json
 import click
 
+import io
+
 # Ensure utf-8 encoding on standard streams
 if hasattr(sys.stdout, "reconfigure"):
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    except Exception:
+    except (AttributeError, io.UnsupportedOperation):
         pass
 
 from .secret_detector import SecretDetector
@@ -63,6 +65,8 @@ def research(output):
     ]
     
     brief = engine.generate_intelligence_brief(sweep_results, custom_threats=custom_threats)
+    total_cves = engine.sync_cve_database(sweep_results, custom_threats=custom_threats)
+    click.secho(f"[+] Synced {total_cves} CVEs and advisories into research/cve_intel_database.json", fg="green")
     click.secho("[+] Threat intelligence research completed successfully!", fg="green")
     click.echo(brief[:1000] + "\n...\n[Full report saved to research/ directory]")
 
